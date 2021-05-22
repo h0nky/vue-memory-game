@@ -1,6 +1,7 @@
   <template>
   <div class="HomePage">
     <GameBoard />
+    <!-- <button class="start-game-button" @click="startGame()">Start</button> -->
   </div>
 </template>
 
@@ -19,7 +20,10 @@ export default {
 <style scoped>
 .HomePage {
   background-color:#eeeee4;
-  width: 100vw;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 </style>

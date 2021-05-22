@@ -1,22 +1,28 @@
-  <template>
-  <div class="GameCard">
-    <img class="card-image" src="../assets/AvalancheLogo.jpg">
-  </div>
+<template>
+    <div class="game-card" @click="toggleCard()">
+        <img
+          width="150"
+          height="150"
+          class="game-card__image"
+          :src="require(`@/assets/${imageSrc}`)"
+        />
+    </div>
 </template>
 
 <script>
 
 export default {
   name: ' GameCard',
-  props: {},
+  props: {
+    imageSrc: String,
+  },
 };
 
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.card-image {
-  width: 100%;
-  height: auto;
+.game-card__image {
+  width: inherit;
 }
 </style>
