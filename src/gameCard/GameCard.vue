@@ -1,5 +1,5 @@
 <template>
-    <div class="game-card" @click="toggleCard()">
+    <div class="game-card" v-on:click="handleClick">
         <img
           width="150"
           height="150"
@@ -15,6 +15,12 @@ export default {
   name: ' GameCard',
   props: {
     imageSrc: String,
+    onClick: Function,
+  },
+  methods: {
+    handleClick: () => {
+      console.log('Click!');
+    },
   },
 };
 

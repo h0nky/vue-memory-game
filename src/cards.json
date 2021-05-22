@@ -1,66 +1,82 @@
 [
   {
     "id":0,
-    "path":"GenZ.jpg"
+    "path":"GenZ.jpg",
+    "show": true
   },
   {
     "id":1,
-    "path":"JustCause3.jpg"
+    "path":"JustCause3.jpg",
+    "show": true
   },
   {
     "id":2,
-    "path":"JustCause4.jpg"
+    "path":"JustCause4.jpg",
+    "show": true
   },
   {
     "id":3,
-    "path":"MadMax.jpg"
+    "path":"MadMax.jpg",
+    "show": true
   },
   {
     "id":4,
-    "path":"Rage2.jpg"
+    "path":"Rage2.jpg",
+    "show": true
   },
   {
     "id":5,
-    "path":"theHunter.jpg"
+    "path":"theHunter.jpg",
+    "show": true
   },
   {
     "id":6,
-    "path":"TheHunter2.jpg"
+    "path":"TheHunter2.jpg",
+    "show": true
   },
   {
     "id":7,
-    "path":"SecondExtinction.jpg"
+    "path":"SecondExtinction.jpg",
+    "show": false
   },
   {
     "id":8,
-    "path":"GenZ.jpg"
+    "path":"GenZ.jpg",
+    "show": true
   },
   {
     "id":9,
-    "path":"JustCause3.jpg"
+    "path":"JustCause3.jpg",
+    "show": true
   },
   {
     "id":10,
-    "path":"JustCause4.jpg"
+    "path":"JustCause4.jpg",
+    "show": true
   },
   {
     "id":11,
-    "path":"MadMax.jpg"
+    "path":"MadMax.jpg",
+    "show": true
   },
   {
     "id":12,
-    "path":"Rage2.jpg"
+    "path":"Rage2.jpg",
+    "show": true
   },
   {
     "id":13,
-    "path":"theHunter.jpg"
+    "path":"theHunter.jpg",
+    "show": true
   },
   {
     "id":14,
-    "path":"TheHunter2.jpg"
+    "path":"TheHunter2.jpg",
+    "show": true
   },
   {
     "id":15,
-    "path":"SecondExtinction.jpg"
+    "path":"SecondExtinction.jpg",
+    "show": true
   }
 ]

@@ -1,8 +1,13 @@
 <template>
   <div class="game-board">
     <ul>
-      <li v-for="image in cardImages" :key="image.id">
-        <GameCard :imageSrc="image.path" />
+      <li v-for="card in gameCards" :key="card.id">
+        <div v-if="card.show">
+          <GameCard :imageSrc="card.path" @toggle-card="handleClick" />
+        </div>
+        <div v-else>
+          <GameCard imageSrc="AvalancheLogo.jpg" @toggle-card="handleClick" />
+        </div>
       </li>
     </ul>
   </div>
@@ -10,7 +15,6 @@
 
 <script>
 import GameCard from '../gameCard/GameCard.vue';
-import cardImages from '../cards.json';
 
 export default {
   name: 'GameBoard',
@@ -18,22 +22,35 @@ export default {
     GameCard,
   },
   props: {},
-  data: () => ({
-    cardImages,
-  }),
+  computed: {
+    gameCards() {
+      return this.$store.state.gameBoard;
+    },
+  },
+  methods: {
+    handleClick: (value) => {
+      console.log('Card is Clicked!', value);
+    },
+  },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .game-board {
-  max-width: 600px;
+  max-width: 680px;
+  border: 4px solid #2c3e50;
+  padding: 8px 4px 4px;
 }
   ul {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     list-style: none;
     padding: 0;
     margin: 0;
+  }
+  li {
+    margin: 8px;
   }
 </style>

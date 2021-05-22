@@ -1,7 +1,7 @@
   <template>
   <div class="HomePage">
     <GameBoard />
-    <!-- <button class="start-game-button" @click="startGame()">Start</button> -->
+    <button class="start-game-button" @click="startGame()">Start</button>
   </div>
 </template>
 
