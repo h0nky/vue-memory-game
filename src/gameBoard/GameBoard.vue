@@ -2,12 +2,13 @@
   <div class="game-board">
     <ul>
       <li v-for="card in gameCards" :key="card.id">
-        <div v-if="card.show">
-          <GameCard :imageSrc="card.path" @toggle-card="handleClick" />
-        </div>
-        <div v-else>
-          <GameCard imageSrc="AvalancheLogo.jpg" @toggle-card="handleClick" />
-        </div>
+          <GameCard
+            :id="card.id"
+            :name="card.name"
+            :imageSrc="card.path"
+            :placeholder="card.placeholder"
+            v-on:cardSelected="handleCardSelected"
+          />
       </li>
     </ul>
   </div>
@@ -22,14 +23,17 @@ export default {
     GameCard,
   },
   props: {},
+  data: () => ({
+    selectedCards: [],
+  }),
   computed: {
     gameCards() {
       return this.$store.state.gameBoard;
     },
   },
   methods: {
-    handleClick: (value) => {
-      console.log('Card is Clicked!', value);
+    handleCardSelected(value) {
+      this.selectedCards.push({ id: value.id, name: value.name });
     },
   },
 };

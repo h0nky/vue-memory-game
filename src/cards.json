@@ -2,81 +2,113 @@
   {
     "id":0,
     "path":"GenZ.jpg",
-    "show": true
+    "placeholder": "AvalancheLogo.jpg",
+    "show": false,
+    "name": "genz"
   },
   {
     "id":1,
     "path":"JustCause3.jpg",
-    "show": true
+    "placeholder": "AvalancheLogo.jpg",
+    "show": false,
+    "name": "justcause3"
   },
   {
     "id":2,
     "path":"JustCause4.jpg",
-    "show": true
+    "placeholder": "AvalancheLogo.jpg",
+    "show": false,
+    "name": "justcause4"
   },
   {
     "id":3,
     "path":"MadMax.jpg",
-    "show": true
+    "placeholder": "AvalancheLogo.jpg",
+    "show": false,
+    "name": "madmax"
   },
   {
     "id":4,
     "path":"Rage2.jpg",
-    "show": true
+    "placeholder": "AvalancheLogo.jpg",
+    "show": false,
+    "name": "rage2"
   },
   {
     "id":5,
     "path":"theHunter.jpg",
-    "show": true
+    "placeholder": "AvalancheLogo.jpg",
+    "show": false,
+    "name": "hunter"
   },
   {
     "id":6,
     "path":"TheHunter2.jpg",
-    "show": true
+    "placeholder": "AvalancheLogo.jpg",
+    "show": false,
+    "name": "hunter2"
   },
   {
     "id":7,
     "path":"SecondExtinction.jpg",
-    "show": false
+    "placeholder": "AvalancheLogo.jpg",
+    "show": false,
+    "name": "secondextinction"
   },
   {
     "id":8,
     "path":"GenZ.jpg",
-    "show": true
+    "placeholder": "AvalancheLogo.jpg",
+    "show": false,
+    "name": "genz"
   },
   {
     "id":9,
     "path":"JustCause3.jpg",
-    "show": true
+    "placeholder": "AvalancheLogo.jpg",
+    "show": false,
+    "name": "justcause3"
   },
   {
     "id":10,
     "path":"JustCause4.jpg",
-    "show": true
+    "placeholder": "AvalancheLogo.jpg",
+    "show": false,
+    "name": "justcause4"
   },
   {
     "id":11,
     "path":"MadMax.jpg",
-    "show": true
+    "placeholder": "AvalancheLogo.jpg",
+    "show": false,
+    "name": "madmax"
   },
   {
     "id":12,
     "path":"Rage2.jpg",
-    "show": true
+    "placeholder": "AvalancheLogo.jpg",
+    "show": false,
+    "name": "rage2"
   },
   {
     "id":13,
     "path":"theHunter.jpg",
-    "show": true
+    "placeholder": "AvalancheLogo.jpg",
+    "show": false,
+    "name": "hunter"
   },
   {
     "id":14,
     "path":"TheHunter2.jpg",
-    "show": true
+    "placeholder": "AvalancheLogo.jpg",
+    "show": false,
+    "name": "hunter2"
   },
   {
     "id":15,
     "path":"SecondExtinction.jpg",
-    "show": true
+    "placeholder": "AvalancheLogo.jpg",
+    "show": false,
+    "name": "secondextinction"
   }
 ]

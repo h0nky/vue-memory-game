@@ -1,22 +1,26 @@
   <template>
   <div class="HomePage">
+    <GameCounter />
     <GameBoard />
-    <button class="start-game-button" @click="startGame()">Start</button>
+    <div class="button-container">
+      <button class="start-game-button" @click="startGame()">Start</button>
+    </div>
   </div>
 </template>
 
 <script>
 import GameBoard from '../gameBoard/GameBoard.vue';
+import GameCounter from '../gameCounter/GameCounter.vue';
 
 export default {
   name: 'HomePage',
   components: {
     GameBoard,
+    GameCounter,
   },
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .HomePage {
   background-color:#eeeee4;
@@ -25,5 +29,8 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.button-container {
+  padding: 16px;
 }
 </style>

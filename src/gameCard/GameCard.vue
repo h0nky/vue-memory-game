@@ -1,10 +1,12 @@
 <template>
-    <div class="game-card" v-on:click="handleClick">
+    <div class="game-card" @click="handleClick">
         <img
+          :id="id"
+          :name="name"
           width="150"
           height="150"
           class="game-card__image"
-          :src="require(`@/assets/${imageSrc}`)"
+          :src="require(`@/assets/${show ? imageSrc : placeholder}`)"
         />
     </div>
 </template>
@@ -12,21 +14,27 @@
 <script>
 
 export default {
-  name: ' GameCard',
+  name: 'GameCard',
   props: {
     imageSrc: String,
     onClick: Function,
+    name: String,
+    id: Number,
+    placeholder: String,
   },
+  data: () => ({
+    show: false,
+  }),
   methods: {
-    handleClick: () => {
-      console.log('Click!');
+    handleClick(e) {
+      this.show = !this.show;
+      this.$emit('cardSelected', e.target);
     },
   },
 };
 
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .game-card__image {
   width: inherit;
