@@ -6,8 +6,9 @@
             :id="card.id"
             :name="card.name"
             :imageSrc="card.path"
+            :show="card.show"
             :placeholder="card.placeholder"
-            v-on:cardSelected="handleCardSelected"
+            v-on:cardSelected="flipCard"
           />
       </li>
     </ul>
@@ -32,8 +33,28 @@ export default {
     },
   },
   methods: {
-    handleCardSelected(value) {
+    flipCard(value) {
+      this.$store.commit('updateCardState', value.id);
       this.selectedCards.push({ id: value.id, name: value.name });
+
+      if (this.selectedCards.length === 2) {
+        if (this.selectedCards[0].name === this.selectedCards[1].name) {
+          this.cardsMatch();
+        } else {
+          this.cardsUnmatch();
+        }
+      }
+    },
+    cardsMatch() {
+      console.log('MATCH!');
+      this.updateMoves();
+    },
+    cardsUnmatch() {
+      console.log('UNMATCH!');
+      this.updateMoves();
+    },
+    updateMoves() {
+      console.log('MOVES INCREMENTED!');
     },
   },
 };

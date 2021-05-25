@@ -3,7 +3,10 @@
     <GameCounter />
     <GameBoard />
     <div class="button-container">
-      <button class="start-game-button" @click="startGame()">Start</button>
+      <button
+        :disabled="isButtonDisabled"
+        class="start-game-button" @click="handleStartGame()">Start</button>
+      <button class="reset-game-button" @click="handleResetGame()">Reset</button>
     </div>
   </div>
 </template>
@@ -17,6 +20,22 @@ export default {
   components: {
     GameBoard,
     GameCounter,
+  },
+  methods: {
+    handleStartGame() {
+      this.$store.commit('startGame');
+    },
+    handleResetGame() {
+      this.$store.commit('resetGame');
+    },
+  },
+  computed: {
+    counterValue() {
+      return this.$store.state.counter;
+    },
+    isButtonDisabled() {
+      return !!this.$store.state.counter;
+    },
   },
 };
 </script>
@@ -32,5 +51,6 @@ export default {
 }
 .button-container {
   padding: 16px;
+  display: flex;
 }
 </style>

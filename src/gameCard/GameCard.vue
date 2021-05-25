@@ -1,5 +1,5 @@
 <template>
-    <div class="game-card" @click="handleClick">
+    <div class="game-card" @click="handleCardFlip">
         <img
           :id="id"
           :name="name"
@@ -21,13 +21,10 @@ export default {
     name: String,
     id: Number,
     placeholder: String,
+    show: Boolean,
   },
-  data: () => ({
-    show: false,
-  }),
   methods: {
-    handleClick(e) {
-      this.show = !this.show;
+    handleCardFlip(e) {
       this.$emit('cardSelected', e.target);
     },
   },

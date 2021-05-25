@@ -7,10 +7,10 @@
 <script>
 export default {
   name: 'GameCounter',
-  props: {
-    date: {
-      type: Number,
-    },
+  data() {
+    return {
+      now: Math.trunc((new Date()).getTime() / 1000),
+    };
   },
   methods: {
     addLeadingZeros: (value) => `${value}`.padStart(2, '0'),
