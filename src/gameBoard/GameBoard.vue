@@ -37,7 +37,10 @@ export default {
       this.$store.commit('updateCardState', value.id);
       this.selectedCards.push({ id: value.id, name: value.name });
 
-      if (this.selectedCards.length === 2) {
+      const BOUND = 2;
+      const cards = this.selectedCards.length;
+
+      if (cards === BOUND) {
         if (this.selectedCards[0].name === this.selectedCards[1].name) {
           this.cardsMatch();
         } else {
@@ -47,14 +50,29 @@ export default {
     },
     cardsMatch() {
       console.log('MATCH!');
+      setTimeout(() => {
+        this.$store.commit('removeMatchedCards');
+      }, 1000);
+      this.updateScore();
       this.updateMoves();
+      this.resetSelectedCards();
     },
     cardsUnmatch() {
-      console.log('UNMATCH!');
+      setTimeout(() => {
+        this.$store.commit('resetUnmatchedCards');
+      }, 2000);
       this.updateMoves();
+      this.resetSelectedCards();
     },
     updateMoves() {
-      console.log('MOVES INCREMENTED!');
+      console.log('UPDATE MOVES!');
+      this.$store.commit('updateMoves');
+    },
+    updateScore() {
+      this.$store.commit('updateScore');
+    },
+    resetSelectedCards() {
+      this.selectedCards.length = 0;
     },
   },
 };
@@ -67,15 +85,17 @@ export default {
   border: 4px solid #2c3e50;
   padding: 8px 4px 4px;
 }
-  ul {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  li {
-    margin: 8px;
-  }
+ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+li {
+  margin: 8px;
+  min-width: 150px;
+  min-height: 155.56px;
+}
 </style>

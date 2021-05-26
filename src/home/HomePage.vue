@@ -1,5 +1,5 @@
   <template>
-  <div class="HomePage">
+  <div class="home-page">
     <GameCounter />
     <GameBoard />
     <div class="button-container">
@@ -41,7 +41,7 @@ export default {
 </script>
 
 <style scoped>
-.HomePage {
+.home-page {
   background-color:#eeeee4;
   height: 100vh;
   display: flex;

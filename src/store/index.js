@@ -25,21 +25,41 @@ const mutations = {
     const shuffledCards = shuffle(gameCards);
     state.gameBoard = [...shuffledCards];
     state.counter = Math.trunc((new Date()).getTime() / 1000) + 60;
-    console.log('NEW STATE', state);
   },
-  updateGameBoard() {},
-  updateMatched(state, card) {
-    state.matched.push(card);
+  removeMatchedCards(state) {
+    const newGameBoard = state.gameBoard.map((card) => {
+      if (card.show) {
+        return {};
+      }
+      return card;
+    });
+    state.gameBoard = newGameBoard;
   },
-  updateTemp(state, id) {
-    const element = state.gameBoard.find((card) => card.id === +id);
-    state.temp.push(element);
+  resetUnmatchedCards(state) {
+    const unmatched = state.gameBoard.map((card) => {
+      if (card.show) {
+        return {
+          ...card,
+          show: false,
+        };
+      }
+      return card;
+    });
+    state.gameBoard = unmatched;
   },
   updateCardState(state, id) {
     const elementIndex = state.gameBoard.findIndex((card) => card.id === +id);
     const element = state.gameBoard.find((card) => card.id === +id);
     const updatedElement = { ...element, show: true };
     state.gameBoard.splice(elementIndex, 1, updatedElement);
+  },
+  updateScore(state) {
+    const newScore = state.score + 1;
+    state.score = newScore;
+  },
+  updateMoves(state) {
+    const newMove = state.moves + 1;
+    state.moves = newMove;
   },
 };
 
