@@ -7,24 +7,29 @@ Vue.use(Vuex);
 
 const getInitialState = () => ({
   gameBoard: gameCards,
-  matched: [],
   score: 0,
-  highestScore: 0,
-  moves: 0,
-  temp: [],
+  highScore: 0,
   counter: 0,
 });
 
 const mutations = {
   resetGame(state) {
-    console.log('RESET GAME!');
     Object.assign(state, getInitialState());
   },
   startGame(state) {
-    console.log('START GAME');
     const shuffledCards = shuffle(gameCards);
     state.gameBoard = [...shuffledCards];
-    state.counter = Math.trunc((new Date()).getTime() / 1000) + 60;
+    state.counter = Math.floor((new Date()).getTime() / 1000) + 60;
+  },
+  finishGame(state) {
+    const newState = getInitialState();
+    if (state.highScore < state.score) {
+      newState.highScore = state.score;
+    } else {
+      newState.highScore = state.highScore;
+    }
+    Object.assign(state, newState);
+    console.log(state);
   },
   removeMatchedCards(state) {
     const newGameBoard = state.gameBoard.map((card) => {
@@ -56,10 +61,6 @@ const mutations = {
   updateScore(state) {
     const newScore = state.score + 1;
     state.score = newScore;
-  },
-  updateMoves(state) {
-    const newMove = state.moves + 1;
-    state.moves = newMove;
   },
 };
 

@@ -6,7 +6,8 @@
           width="150"
           height="150"
           class="game-card__image"
-          :src="require(`@/assets/${show ? imageSrc : placeholder}`)"
+          :src="name ? require(`@/assets/${show ? imageSrc : placeholder}`) : null"
+          alt=""
         />
     </div>
 </template>

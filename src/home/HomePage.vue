@@ -1,7 +1,22 @@
   <template>
   <div class="home-page">
-    <GameCounter />
-    <GameBoard />
+    <div class="home-page__game-info">
+      <div class="home-page__score">
+        {{ 'HIGHEST SCORE' }} : {{ highScore }}
+      </div>
+      <div class="home-page__score">
+        {{ 'SCORE' }} : {{ scoreValue }}
+      </div>
+      <GameCounter />
+    </div>
+    <div v-if="!isButtonDisabled">
+      <div class="placeholder">
+        {{ 'PUSH START BUTTON' }}
+      </div>
+    </div>
+    <div v-else>
+      <GameBoard />
+    </div>
     <div class="button-container">
       <button
         :disabled="isButtonDisabled"
@@ -33,6 +48,12 @@ export default {
     counterValue() {
       return this.$store.state.counter;
     },
+    scoreValue() {
+      return this.$store.state.score;
+    },
+    highScore() {
+      return this.$store.state.highScore;
+    },
     isButtonDisabled() {
       return !!this.$store.state.counter;
     },
@@ -52,5 +73,26 @@ export default {
 .button-container {
   padding: 16px;
   display: flex;
+}
+.home-page__game-info {
+  display: flex;
+  align-items: center;
+}
+.home-page__score {
+  font-size: 24px;
+  color: tomato;
+  font-weight: bold;
+  padding: 16px;
+}
+button {
+  margin: 16px;
+  width: 100px;
+  height: 30px;
+}
+.placeholder {
+  font-size: 36px;
+  color: tomato;
+  font-weight: bold;
+  padding: 16px;
 }
 </style>

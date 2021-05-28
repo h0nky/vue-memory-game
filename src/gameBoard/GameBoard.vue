@@ -23,7 +23,6 @@ export default {
   components: {
     GameCard,
   },
-  props: {},
   data: () => ({
     selectedCards: [],
   }),
@@ -49,24 +48,17 @@ export default {
       }
     },
     cardsMatch() {
-      console.log('MATCH!');
       setTimeout(() => {
         this.$store.commit('removeMatchedCards');
+        this.updateScore();
       }, 1000);
-      this.updateScore();
-      this.updateMoves();
       this.resetSelectedCards();
     },
     cardsUnmatch() {
       setTimeout(() => {
         this.$store.commit('resetUnmatchedCards');
       }, 2000);
-      this.updateMoves();
       this.resetSelectedCards();
-    },
-    updateMoves() {
-      console.log('UPDATE MOVES!');
-      this.$store.commit('updateMoves');
     },
     updateScore() {
       this.$store.commit('updateScore');
